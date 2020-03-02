@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML-Grundlagen</title>
+    <style>
+        .output {
+            padding: 0.2em;
+            border: 1px solid Grey;
+        }  
+    </style>
+  </head>
+  <body>
+      <h1>HTML-Grundlagen</h1>
+      
+      <p>Mittels HTML (<strong>H</strong>yper<strong>t</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage) definieren wir die Struktur einer HTML-Seite, die Tags und normalen Text enthalten kann. Tags setzen wir in eckigen Klammern, wobei Start- und Endtags unterschieden werden. Bei einer Webseite kannst Du Dir mit <tt>Strg + U</tt> den Quelltext einer HTML-Seite ansehen.</p>
+      
+      <p>Der Browser, der das HTML interpretiert, bringt zur Darstellung eigene CSS3-Anweisungen mit, die das Erscheinungsbild der verschiedenen Elemente im Browser festlegen.</p>
+      
+      <h2>Überschriften</h2>
+      
+      <p>Mit <tt>&lt;h1&gt;&lt;/h1&gt;</tt>, <tt>&lt;h2&gt;&lt;/h2&gt;</tt>, <tt>&lt;h3&gt;&lt;/h3&gt;</tt>, <tt>&lt;h4&gt;&lt;/h4&gt;</tt>, <tt>&lt;h5&gt;&lt;/h5&gt;</tt> und <tt>&lt;h6&gt;&lt;/h6&gt;</tt> können wir Überschriften definieren. <tt>h</tt> steht dabei für <tt>header</tt>.</p>
+      
+      <pre>
+      &lt;h1&gt;Die erste Überschrift&lt;/h1&gt;
+      &lt;h2&gt;Die zweite Überschrift&lt;/h2&gt;
+      &lt;h3&gt;Die dritte Überschrift&lt;/h3&gt;
+      &lt;h4&gt;Die vierte Überschrift&lt;/h4&gt;>
+      &lt;h5&gt;Die fünfte Überschrift&lt;/h5&gt;
+      &lt;h6&gt;Die sechste Überschrift&lt;/h6&gt;
+      </pre>
+      
+      <h2>Absätze</h2>
+      
+      <p>Für Absätze wird das <tt>&lt;p&gt;&lt;/p&gt</tt>-Tag (<strong>p</strong>aragraph) verwendet. Ohne das Element würde Text einfach aneinander gehängt. Das <tt>&lt;p&gt;&lt;/p&gt</tt>-Element bewirkt eine sinnvolle Gliederung nach Absätzen.</p>
+      
+      <pre>
+      &lt;p&gt;Der erste Absatz&lt;/p&gt;
+      &lt;p&gt;Der zweite Absatz&lt;/p&gt;
+      </pre>
+      
+      <p>Möchte man in einem Absatz einen Zeilenumbruch erzwingen, dann verwendet man dafür das &lt;br&gt;-Tag, das kein schließendes Element besitzt.</p>
+      
+      <p>Nachfolgend zwei Beispiele, einmal ohne und einmal mit &ltp&gt-Tag:</p>
+      
+      <pre>
+      Der erste Absatz.
+      Der zweite Absatz.
+      </pre>
+      
+      <p>Ergibt dann im Browser:</p>
+      
+      <div class="output">
+      Der erste Absatz.
+      Der zweite Absatz.
+      </div>
+      
+      <p>Mit dem Tag sieht es dann wie folgt aus:</p>
+      
+      <pre>
+      &lt;p&gt;Der erste Absatz.&lt;/p&gt;
+      &lt;p&gt;Der zweite Absatz.&lt;/p&gt;
+      </pre>
+      
+      <p>Im Browser sieht man dann:</p>
+      
+      <div class="output">
+      <p>Der erste Absatz.</p>
+      <p>Der zweite Absatz.</p>
+      </div>
+      
+      <h2>Listen</h2>
+      
+      <p>HTML kennt 2 Möglichkeiten, Listen hinzuzufügen und zwar einmal <strong>normale Listen</strong>:</p>
+      
+      <pre>
+      &lt;ul&gt;
+          &lt;li&gt;Listenelement 1&lt;/li&gt;
+          &lt;li&gt;Listenelement 2&lt;/li&gt;
+      &lt;/ul&gt;
+      </pre>
+      
+      <p>So sieht es dann auf der Seite aus:</p>
+      
+      <div class="output">
+      <ul>
+          <li>Listenelement 1</li>
+          <li>Listenelement 2</li>
+      </ul>
+      </div>
+      
+      <p>Ferner gibt es noch eine <strong>nummerierte Liste</strong>:</p>
+      
+      <pre>
+      &lt;ol&gt;
+          &lt;li&gt;Listenelement 1&lt;/li&gt;
+          &lt;li&gt;Listenelement 2&lt;/li&gt;
+      &lt;/ol&gt;
+      </pre>
+      
+      <p>So sieht es dann auf der Seite aus:</p>
+      
+      <div class="output">
+      <ol>
+          <li>Listenelement 1</li>
+          <li>Listenelement 2</li>
+      </ol>     
+      </div>
+      
+      <h2>Bilder einfügen</h2>
+      
+      <p>Bilddateien werden mit dem <tt>&lt;img&gt;</tt>-Tag in einer HTML-Seite eingebunden. Ein Beispiel:</p>
+      
+      <pre>
+      &lt;img src="path/filename.png" width="200px" height="400px" /&gt;    
+      </pre>
+      
+      <p>In diesem Beispiel wird eine Bilddatei aus dem Ordner <tt>path</tt> mit dem Dateinamen <tt>filename.png</tt> geladen und mit der Breite <tt>200px</tt> und der Höhe <tt>400px</tt> in der Seite angezeigt.</p><p>In der Regel beschränkt man sich darauf, entweder die Höhe oder die Breite anzugeben, der andere Wert wird dann jeweils berechnet. Beachte, dass das <tt>img</tt>-Tag kein schließendes Tag besitzt.</p>
+      
+      
+      
+      <h2>Hervorhebung einzelner Wörter oder Satzteile</h2>
+      
+      <p>Mit den Tags <tt>&lt;strong&gt;&lt;/strong&gt;</tt> (<strong>Fettdruck</strong>), <tt>&lt;em&gt;&lt;/em&gt;</tt> (<em>Kursivdruck</em>) und <tt>&lt;u&gt;&lt;/u&gt;</tt> (<u>Unterstreichung</u>) kann man Text hervorheben. Da Hyperlinks standardmäßig unterstrichen werden, sollte man, um Verwechslungen zu vermeiden, auf Unterstreichungen möglichst verzichten.</p>
+      
+      <h2>Weitere HTML-Tags</h2>
+      
+      <p>Mit dem <tt>&lt;hr&gt;</tt>-Tag kann man eine horizontale Linie auf einer Seite einfügen. Das Element hat kein schließendes Element.</p>
+      
+      <p>Der Browser ordnet die Zeilen nach eigenem Gutdünken an. Möchte man verhindern, dass ein Text an einem Leerzeichen in einer Zeile umgebrochen wird, kann man ein sogenanntes geschütztes Leerzeichen verwenden und ersetzt hierzu ein Leerzeichen durch <tt>&nbsp;</tt>.</p>
+  </body>
+</html>
