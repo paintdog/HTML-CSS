@@ -5,9 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTML-Grundlagen</title>
     <style>
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: Darkblue;
+        }
+        
+        pre {
+            padding: 0.2em;
+            border: 2px solid Black;
+        }
+        
         .output {
             padding: 0.2em;
-            border: 1px solid Grey;
+            border: 2px solid Grey;
         }  
     </style>
   </head>
@@ -113,11 +123,88 @@
       <p>Bilddateien werden mit dem <tt>&lt;img&gt;</tt>-Tag in einer HTML-Seite eingebunden. Ein Beispiel:</p>
       
       <pre>
-      &lt;img src="path/filename.png" width="200px" height="400px" /&gt;    
+      &lt;img src="path/filename.png" alt="Beschreibung des Bildes" width="200px" height="400px" /&gt;    
       </pre>
       
-      <p>In diesem Beispiel wird eine Bilddatei aus dem Ordner <tt>path</tt> mit dem Dateinamen <tt>filename.png</tt> geladen und mit der Breite <tt>200px</tt> und der Höhe <tt>400px</tt> in der Seite angezeigt.</p><p>In der Regel beschränkt man sich darauf, entweder die Höhe oder die Breite anzugeben, der andere Wert wird dann jeweils berechnet. Beachte, dass das <tt>img</tt>-Tag kein schließendes Tag besitzt.</p>
+      <p>In diesem Beispiel wird eine Bilddatei aus dem Ordner <tt>path</tt> mit dem Dateinamen <tt>filename.png</tt> geladen und mit der Breite <tt>200px</tt> und der Höhe <tt>400px</tt> in der Seite angezeigt. Mit dem Element <tt>alt</tt> kann man das Bild beschreiben, dieser Text wird angezeigt, wenn das Bild nicht geladen werden konnte.</p>
       
+      <p>In der Regel beschränkt man sich darauf, entweder die Höhe oder die Breite anzugeben, der andere Wert wird dann jeweils berechnet. Beachte, dass das <tt>img</tt>-Tag kein schließendes Tag besitzt.</p>
+      
+      <h3>Bilder aus Verzeichnissen laden</h3>
+      
+      <p>Grundsätzlich ist es möglich, ein Bild aus demselben Ordner zu laden, in dem auch die HTML-Seite liegt, man kann aber ein Bild auch aus einem Unterordner bzw. aus einem Ordner laden, der oberhalb des Verzeichnisses mit der HTML-Datei liegt. Auch das Laden einer Bilddatei direkt aus dem Netz ist möglich.</p>
+      
+      <p>Wir nehmen folgende Verzeichnisstruktur an:</p>
+      
+      <ul>
+        <li>Ordner 1</li>
+          <ul>
+          <li>Datei_1.png</li>
+          </ul>
+        <li>Ordner 2</li>
+          <ul>
+          <li>Datei_2.png</li>
+          <li>index.html</li>
+          <ul>
+              <li>Ordner 3</li>
+              <ul>
+              <li>Datei_3.png</li>
+              </ul>
+          </ul>
+          </ul>
+      </ul>
+      
+      <p>Liegt die Bilddatei im selben Verzeichnis wie die HTML-Datei, dann kann man die Bilddatei wie folgt laden:</p>
+      
+      <pre>
+            &lt;img src="Datei_2.png" alt="Beschreibung des Bildes" width="200px" height="400px" /&gt;
+      </pre>
+      
+      <p>Liegt die Bilddatei in einem anderen Verzeichnis, dann kann man mittels <tt>..</tt> eine Ebene höher wechseln und von dort in das Verzeichnis mit der Bilddatei wechseln. Die Zeile mit dem <tt>img</tt>-Tag lautet dann:</p>
+      
+      <pre>
+            &lt;img src="../Ordner 1/Datei_1.png" alt="Beschreibung des Bildes" width="200px" height="400px" /&gt;
+      </pre>
+      
+      <p>Liegt die Bilddatei in einem Verzeichnis unterhalb der index.html-Datei, dann lautet die Zeile mit dem <tt>img</tt>-Tag</p>
+      
+      <pre>
+            &lt;img src="Ordner 3/Datei_1.png" alt="Beschreibung des Bildes" width="200px" height="400px" /&gt;
+      </pre>
+      
+      <h2>Links</h2>
+      
+      <h3>Links auf andere Seiten</h3>
+      
+      <p>Für die Navigation zu anderen Seiten nutzt man Hyperlinks, die wie folgt aufgebaut werden:</p>
+      
+      <pre>
+        &lt;a href="index.html"&gt;Hauptseite&lt;/a&gt;
+      </pre>
+      
+      <p>Im Browser angezeigt wird dann:</p>
+      
+      <div class="output">
+      <a href="index.html">Hauptseite</a>
+      </div>
+      
+      <p>Für die Pfadangaben, d. h. die Navigation innerhalb von Verzeichnissen gelten die selben Hinweise wie bei Bildern.</p>
+      
+      <h3>E-Mail-Adressen verlinken</h3>
+      
+      <p>E-Mail-Adressen kann man wie folgt in einer HTML-Seite verlinken:</p>
+      
+      <pre>
+        &lt;a href="mailto:dummy@www.de"&gt;Kontakt&lt;/a&gt;
+      </pre>
+      
+      <p>Im Browser angezeigt wird dann:</p>
+      
+      <div class="output">
+      <a href="mailto:dummy@www.de">Kontakt</a>
+      </div>
+            
+      <p>Wird ein <tt>mailto:</tt>-Link angeklickt, wird beim Benutzer versucht, für den Link ein Mailprogramm zu öffnen.</p>
       
       
       <h2>Hervorhebung einzelner Wörter oder Satzteile</h2>
